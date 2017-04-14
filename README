@@ -1,0 +1,6 @@
+A boilerplate php project with Klein router.
+
+Clone it.
+cd into cloned directory and run 'composer install'.
+chmod +x dev_server.sh
+lynx --dump localhost:8080
