@@ -1,18 +1,7 @@
 <?php
 // router.php
-// Usage: php -S localhost:8000 -t ./path/to/docroot router.php
-$uri = urldecode(
-    parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
-);
-
-// echo $uri;
-// echo __DIR__.'/public'.$uri;
-
-// This file allows us to emulate Apache's "mod_rewrite" functionality from the
-// built-in PHP web server. This provides a convenient way to test a Laravel
-// application without having installed a "real" web server software here.
-if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
-    return false;
+if (file_exists(__DIR__ . '/' . $_SERVER['REQUEST_URI'])) {
+    return false; // serve the requested resource as-is.
+} else {
+    include_once 'index.php';
 }
-
-require_once __DIR__.'/index.php';
