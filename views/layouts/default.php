@@ -7,7 +7,7 @@
   <meta name="description" content="Site description">
   <meta name="author" content="Author">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="static/css/styles.css?v=1.0">
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,8 +15,8 @@
 </head>
 
 <body>
-  <?? $this->yieldView(); ?>
-  <script src="js/scripts.js"></script>
+  <?= $this->yieldView(); ?>
+  <script src="static/js/scripts.js"></script>
 </body>
 </html>
 
