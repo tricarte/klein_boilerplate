@@ -10,7 +10,25 @@ require_once __DIR__ . '/vendor/autoload.php';
 // Dispatch as always
 $klein = new \Klein\Klein();
 
-$klein->respond('GET', '/', function ($req, $res) {
+// Run before all routes are executed.
+// This is where you register services and specify default layout
+$klein->respond(function ($req, $res, $service, $app) {
+    // $app->register('dbconn', function () {
+    //     $dbconn = new PDO("sqlite:./db/database.sqlite");
+    //     return $dbconn;
+    // });
+    $service->layout('views/layouts/default.php');
+});
+
+// Home page view
+$klein->respond('/', function ($request, $response, $service) {
+    // add some data to the view.
+    $service->pageTitle = 'Home Page';
+    // This is the function that renders the view inside the layout.
+    $service->render('views/home.php');
+});
+
+$klein->respond('GET', '/api', function ($req, $res) {
     $x = (object) [
         'a' => 'b',
     ];
