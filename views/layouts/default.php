@@ -7,7 +7,7 @@
   <meta name="description" content="Site description">
   <meta name="author" content="Author">
 
-  <link rel="stylesheet" href="static/components/boostrap/dist/bootstrap.css">
+  <link rel="stylesheet" href="static/components/bootstrap/dist/bootstrap.css">
   <link rel="stylesheet" href="static/css/styles.css?v=1.0">
 
   <!--[if lt IE 9]>
