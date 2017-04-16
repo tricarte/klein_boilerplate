@@ -7,7 +7,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 //     $_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'], strlen($base));
 // }
 
-// Dispatch as always
 $klein = new \Klein\Klein();
 
 // Run before all routes are executed.
@@ -39,4 +38,5 @@ $klein->onHttpError(function ($code, $router, $matched) {
     $router->response()->body('Error: ' . $code);
 });
 
+// Dispatch as always
 $klein->dispatch();
