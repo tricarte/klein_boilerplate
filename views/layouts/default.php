@@ -8,7 +8,7 @@
   <meta name="author" content="Author">
 
   <link rel="stylesheet" href="static/components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="static/css/styles.css?v=1.0">
+  <link rel="stylesheet" href="static/css/styles.css">
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

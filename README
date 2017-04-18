@@ -4,3 +4,5 @@ Clone it.
 cd into cloned directory and run 'composer install'.
 chmod +x dev_server.sh
 lynx --dump localhost:8080
+
+Note that PHP builtin development server treats URIs with dots as real files on disk.
