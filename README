@@ -2,6 +2,7 @@ A boilerplate php project with Klein router.
 
 Clone it.
 cd into cloned directory and run 'composer install'.
+Run 'bower install' to install client side packages such as jquery and bootstrap.
 chmod +x dev_server.sh
 lynx --dump localhost:8080
 
