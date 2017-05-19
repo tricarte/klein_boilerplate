@@ -4,6 +4,11 @@ Clone it.
 cd into cloned directory and run 'composer install'.
 Run 'bower install' to install client side packages such as jquery and bootstrap.
 chmod +x dev_server.sh
+"./dev_server.sh" to start the development server.
 lynx --dump localhost:8080
+
+For live reload support install browser-sync.
+Start browser-sync using "./browsersync.sh" in project root.
+The url for browser-sync is : http://your_dev_server_ip:3000.
 
 Note that PHP builtin development server treats URIs with dots as real files on disk.
