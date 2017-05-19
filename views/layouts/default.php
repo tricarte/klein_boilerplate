@@ -17,6 +17,7 @@
 
 <body>
   <?= $this->yieldView(); ?>
+  <p><a href="/api">Rest api link example</a></p>
   <script src="static/components/jquery/dist/jquery.js"></script>
   <script src="static/components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="static/js/scripts.js"></script>

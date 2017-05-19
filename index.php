@@ -27,6 +27,12 @@ $klein->respond('/', function ($request, $response, $service) {
     $service->render('views/home.php');
 });
 
+// about view
+$klein->respond('/about', function ($request, $response, $service) {
+    $service->pageTitle = 'About';
+    $service->render('views/about.php');
+});
+
 $klein->respond('GET', '/api', function ($req, $res) {
     $x = (object) [
         'a' => 'b',
