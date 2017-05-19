@@ -3,6 +3,8 @@ vendor
 composer.phar
 composer.lock
 
+static/components/*
+
 # IntelliJ - PhpStorm and PyCharm
 .idea
 *.ipr
