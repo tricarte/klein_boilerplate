@@ -27,12 +27,16 @@ $klein->respond('/', function ($request, $response, $service) {
     $service->render('views/home.php');
 });
 
-// about view
+// About page view
 $klein->respond('/about', function ($request, $response, $service) {
     $service->pageTitle = 'About';
     $service->render('views/about.php');
 });
 
+// About page view using separate class method
+$klein->respond('/aboutclass', \Routes\AboutAction::index());
+
+// Return JSON response
 $klein->respond('GET', '/api', function ($req, $res) {
     $x = (object) [
         'a' => 'b',
@@ -40,6 +44,7 @@ $klein->respond('GET', '/api', function ($req, $res) {
     $res->json($x);
 });
 
+// Catch all HTTP errors
 $klein->onHttpError(function ($code, $router, $matched) {
     $router->response()->body('Error: ' . $code);
 });
