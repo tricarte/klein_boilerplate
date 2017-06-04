@@ -33,10 +33,16 @@ $klein->respond('/about', function ($request, $response, $service) {
     $service->render('views/about.php');
 });
 
+<<<<<<< HEAD
 // About page view using separate class method
 $klein->respond('/aboutclass', \Routes\AboutAction::index());
 
 // Return JSON response
+=======
+// about view using separate class method
+$klein->respond('/aboutclass', \Routes\AboutAction::index());
+
+>>>>>>> 87d24f68dfbf0d1a9ce0e3ec38167d6057fbbdaa
 $klein->respond('GET', '/api', function ($req, $res) {
     $x = (object) [
         'a' => 'b',
