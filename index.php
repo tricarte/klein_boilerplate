@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+use Noodlehaus\Config;
 
 // Update request when we have a subdirectory
 // $base  = dirname($_SERVER['PHP_SELF']);
@@ -16,13 +17,17 @@ $klein->respond(function ($req, $res, $service, $app) {
     //     $dbconn = new PDO("sqlite:./db/database.sqlite");
     //     return $dbconn;
     // });
+    $app->register('config', function () {
+        $config = Config::load('config.php');
+        return $config;
+    });
     $service->layout('views/layouts/default.php');
 });
 
 // Home page view
-$klein->respond('/', function ($request, $response, $service) {
+$klein->respond('/', function ($request, $response, $service, $app) {
     // add some data to the view.
-    $service->pageTitle = 'Home Page';
+    $service->pageTitle = $app->config->get('site_title');
     // This is the function that renders the view inside the layout.
     $service->render('views/home.php');
 });
